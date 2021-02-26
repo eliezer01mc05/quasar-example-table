@@ -76,7 +76,7 @@ export default {
         {
           name: "title",
           label: "Title",
-          field: "title",
+          field: "title", 
           align: "left",
           sortable: true,
         },
