@@ -36,7 +36,7 @@
             </q-td>
           </q-tr>
         </template>
-        <!-- <template v-slot:body-cell-action="props">
+        <template v-slot:body-cell-action="props">
           <q-td :props="props">
             <q-btn
               icon="delete"
@@ -54,7 +54,7 @@
               dense
             />
           </q-td>
-        </template> -->
+        </template>
       </q-table>
     </div>
   </q-page>
@@ -67,26 +67,26 @@ export default {
     return {
       columns: [
         {
-          name: "id",
-          label: "ID Post",
-          field: "id",
+          name: "nome",
+          label: "Nome",
+          field: "nome",
           align: "left",
           sortable: true,
         },
         {
-          name: "title",
-          label: "Title",
-          field: "title", 
+          name: "cpf",
+          label: "CPF",
+          field: "cpf", 
           align: "left",
           sortable: true,
         },
-        // {
-        //   name: "action",
-        //   label: "Action",
-        //   field: "id",
-        //   align: "left",
-        //   sortable: true,
-        // },
+        {
+          name: "action",
+          label: "ID",
+          field: "id",
+          align: "left",
+          sortable: true,
+        },
       ],
       posts: [],
       selected: [],
@@ -98,7 +98,7 @@ export default {
   methods: {
     getPosts() {
       this.$axios
-        .get("https://jsonplaceholder.typicode.com/posts")
+        .get("http://localhost:8080/portaldeservicos/cidadaos/")
         .then((res) => {
           this.posts = res.data;
         })
